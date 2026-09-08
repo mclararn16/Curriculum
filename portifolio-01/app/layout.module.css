@@ -1,9 +1,9 @@
-.navbar {
+.navbar { /*barra de navegação*/
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #e3a72f;
+  background-color: #e15e6e;
   color: #f0ecc9;
 }
 

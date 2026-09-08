@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-BR">
       <body>
         <nav className={styles.navbar}>
-          <span className={styles.logo}>Maria Clara Ribeiro</span>
+          <span className={styles.logo}>MC</span>
           <div className={styles.links}>
             <Link href="/">Início</Link>
             <Link href="/forca">Jogo da Forca</Link>

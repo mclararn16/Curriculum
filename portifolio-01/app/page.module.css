@@ -1,0 +1,189 @@
+.container {
+  min-height: calc(100vh - 76px);
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px;
+  display: grid;
+  place-items: center;
+}
+
+.hero {
+  text-align: center;
+  width: min(100%, 720px);
+  padding: 72px 24px;
+}
+
+.eyebrow {
+  color: #058789;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 14px 0 12px;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  line-height: 0.98;
+}
+
+.hero p {
+  max-width: 520px;
+  margin: 0 auto;
+  color: #058789;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.primaryAction,
+.secondaryAction {
+  min-width: 172px;
+  padding: 15px 22px;
+  border: 2px solid #058789;
+  border-radius: 999px;
+  font-weight: bold;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.primaryAction {
+  background-color: transparent;
+  color: #058789;
+}
+
+.secondaryAction {
+  background-color: transparent;
+  color: #058789;
+}
+
+.primaryAction:hover,
+.secondaryAction:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 #c3e6d4;
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 48px 8px;
+  }
+
+  .actions,
+  .primaryAction,
+  .secondaryAction {
+    width: 100%;
+  }
+}
+
+.contentPage {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.contentPage h1 {
+  margin: 12px 0;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+}
+
+.contentPage > p {
+  max-width: 640px;
+  color: #058789;
+  line-height: 1.7;
+}
+
+.detailSection,
+.gameSection {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid #058789;
+}
+
+.detailSection {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.detailSection h2 {
+  margin-bottom: 10px;
+  color: #e15e6e;
+  font-size: 1.35rem;
+}
+
+.detailSection p {
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.academicImage {
+  border: 5px solid #e15e6e;
+  border-radius: 45px;
+  flex-shrink: 0;
+  object-fit: cover;
+  outline: 2px solid #058789;
+  outline-offset: 3px;
+}
+
+.word {
+  margin-bottom: 16px;
+  color: #058789;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.18em;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.keyboard button,
+.restartAction {
+  border: 2px solid #058789;
+  border-radius: 6px;
+  background: transparent;
+  color: #058789;
+  cursor: pointer;
+  font: inherit;
+  font-weight: bold;
+}
+
+.keyboard button {
+  width: 42px;
+  height: 42px;
+}
+
+.keyboard button:not(:disabled):hover,
+.restartAction:hover {
+  background: #058789;
+  color: #f0ecc9;
+}
+
+.keyboard button:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.restartAction {
+  margin-top: 24px;
+  padding: 12px 18px;
+}
+
+@media (max-width: 600px) {
+  .detailSection {
+    display: block;
+  }
+
+  .academicImage {
+    margin-bottom: 32px;
+  }
+}
