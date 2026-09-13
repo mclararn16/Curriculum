@@ -106,7 +106,7 @@
 }
 
 .detailSection {
-  display: flex;
+  display: block;
   gap: 32px;
   align-items: flex-start;
 }
