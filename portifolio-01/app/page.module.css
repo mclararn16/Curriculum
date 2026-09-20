@@ -14,7 +14,7 @@
 }
 
 .eyebrow {
-  color: #058789;
+  color: #9aa055;
   font-size: 0.8rem;
   font-weight: bold;
   letter-spacing: 0.14em;
@@ -30,7 +30,7 @@
 .hero p {
   max-width: 520px;
   margin: 0 auto;
-  color: #058789;
+  color: #9aa055;
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -47,7 +47,7 @@
 .secondaryAction {
   min-width: 172px;
   padding: 15px 22px;
-  border: 2px solid #058789;
+  border: 2px solid #9aa055;
   border-radius: 999px;
   font-weight: bold;
   transition: transform 160ms ease, box-shadow 160ms ease;
@@ -55,18 +55,18 @@
 
 .primaryAction {
   background-color: transparent;
-  color: #058789;
+  color: #9aa055;
 }
 
 .secondaryAction {
   background-color: transparent;
-  color: #058789;
+  color: #9aa055;
 }
 
-.primaryAction:hover,
+.primaryAction:hover,     /*sobra do botão*/
 .secondaryAction:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 0 #c3e6d4;
+  box-shadow: 0 7px 0 #A35481;
 }
 
 @media (max-width: 520px) {
@@ -94,7 +94,7 @@
 
 .contentPage > p {
   max-width: 640px;
-  color: #058789;
+  color: #9aa055;
   line-height: 1.7;
 }
 
@@ -102,7 +102,7 @@
 .gameSection {
   margin-top: 48px;
   padding-top: 32px;
-  border-top: 2px solid #058789;
+  border-top: 2px solid #9aa055;
 }
 
 .detailSection {
@@ -113,7 +113,7 @@
 
 .detailSection h2 {
   margin-bottom: 10px;
-  color: #e15e6e;
+  color: #a35481;
   font-size: 1.35rem;
 }
 
@@ -123,17 +123,16 @@
 }
 
 .academicImage {
-  border: 5px solid #e15e6e;
-  border-radius: 45px;
+  border: 5px solid #a35481;
+  border-radius: 8px;
   flex-shrink: 0;
   object-fit: cover;
-  outline: 2px solid #058789;
-  outline-offset: 3px;
+  
 }
-
+ 
 .word {
   margin-bottom: 16px;
-  color: #058789;
+  color:#9aa055;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 0.18em;
@@ -148,10 +147,10 @@
 
 .keyboard button,
 .restartAction {
-  border: 2px solid #058789;
+  border: 2px solid #9aa055;
   border-radius: 6px;
   background: transparent;
-  color: #058789;
+  color: #9aa055;
   cursor: pointer;
   font: inherit;
   font-weight: bold;
@@ -164,7 +163,7 @@
 
 .keyboard button:not(:disabled):hover,
 .restartAction:hover {
-  background: #058789;
+  background: #9aa055;
   color: #f0ecc9;
 }
 
