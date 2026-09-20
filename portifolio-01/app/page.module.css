@@ -123,11 +123,28 @@
 }
 
 .academicImage {
-  border: 5px solid #a35481;
+  border: 3px solid #a35481;
   border-radius: 8px;
   flex-shrink: 0;
   object-fit: cover;
+   margin-right: 16px;
   
+}
+.projectImage{
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 5px solid #a35481;
+  border-radius: 8px;
+}
+
+.switlyImage {
+  width: 200px;
+  height: auto;
+  border: 3px solid #a35481;
+  border-radius: 8px;
 }
  
 .word {
