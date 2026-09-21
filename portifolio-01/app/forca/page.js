@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import styles from '../page.module.css';
 
-const word = 'COMPUTACAO';
+const word = 'TOBBY';
 
 export default function Forca() {
   const [guesses, setGuesses] = useState([]);
@@ -25,6 +25,7 @@ export default function Forca() {
     <main className={styles.contentPage}>
       <span className={styles.eyebrow}>Momento de brincar</span>
       <h1>Jogo da forca</h1>
+      <p>Dica para palvra: Nome do meu amigo mais antigo 🐶!</p>
       <section className={styles.gameSection}>
         <p className={styles.word}>{visibleWord}</p>
         <p>Erros: {wrongGuesses.length} de 6</p>
