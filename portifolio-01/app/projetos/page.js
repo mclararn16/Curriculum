@@ -22,7 +22,7 @@ Desenvolvi este projeto em uma disciplina focada em gestão de projetos de softw
         <p>Este site que você está navegando agora também é um dos meus projetos! Desenvolvido com React no front-end e Node.js no back-end, foi uma experiência muito interessante de unir design, organização de conteúdo e programação para criar uma vitrine dos meus trabalhos e experiências.</p>
         <h2>Jogo dos Dados</h2>
         <Image src="/imagens/jogoDado.jpeg" alt="Projeto SWITAB" width={900} height={500} className={styles.projectImage} />
-        <p>O jogo dos dados foi um projeto muito interessante que criei para a cadeira de Web-Mobile da faculdade, um projeto criado em REACT utilizando Node.js e foi muito interessante aprender coisas novas atavés de pesquisas para o design do site.</p>
+        <p>O jogo dos dados foi um projeto muito interessante que criei para a cadeira de Web-Mobile da faculdade, um projeto criado em REACT utilizando Node.js e foi muito interessante aprender coisas novas através de pesquisas para o design do site.</p>
         </div>
       </section>
     </main>
