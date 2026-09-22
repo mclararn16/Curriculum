@@ -4,10 +4,15 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className={styles.container}>
+      
       <section className={styles.hero}>
+        <div className={styles.projectCard}>
         <span className={styles.eyebrow}>Portfólio pessoal</span>
+
         <h1>Maria Clara Ribeiro</h1>
-        <p>Estudante de Ciência da Computação, curiosa por tecnologia e criação.</p>
+        
+          <p>Estudante de Ciência da Computação, curiosa por tecnologia e criação.</p>
+        
 
         <nav className={styles.actions} aria-label="Navegação principal">
           <Link className={styles.primaryAction} href="/sobre">
@@ -20,6 +25,7 @@ export default function Home() {
             Divirta-se
           </Link>
         </nav>
+        </div>
       </section>
     </main>
   );

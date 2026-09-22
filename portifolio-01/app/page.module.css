@@ -201,7 +201,15 @@
   padding: 24px;
   margin-bottom: 32px;
   background-color: #F1FFD5;
-}
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+.homepageCard {
+  border: 2px solid #A35481; 
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+  background-color: #F1FFD5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 
 @media (max-width: 600px) {
   .detailSection {
