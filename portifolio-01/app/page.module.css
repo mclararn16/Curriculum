@@ -14,9 +14,9 @@
 }
 
 .eyebrow {
-  color: #9aa055;
+  color: var(--red);
   font-size: 0.8rem;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -24,13 +24,15 @@
 .hero h1 {
   margin: 14px 0 12px;
   font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
   line-height: 0.98;
+  letter-spacing: -0.02em;
 }
 
 .hero p {
   max-width: 520px;
   margin: 0 auto;
-  color: #9aa055;
+  color: color-mix(in srgb, var(--vinmn-blue) 72%, var(--old-lace));
   font-size: 1.05rem;
   line-height: 1.7;
 }
@@ -47,26 +49,36 @@
 .secondaryAction {
   min-width: 172px;
   padding: 15px 22px;
-  border: 2px solid #9aa055;
+  border: 2px solid var(--vinmn-blue);
   border-radius: 999px;
-  font-weight: bold;
-  transition: transform 160ms ease, box-shadow 160ms ease;
+  font-weight: 700;
+  transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, color 160ms ease;
 }
 
 .primaryAction {
-  background-color: transparent;
-  color: #9aa055;
+  border-color: var(--red);
+  background-color: var(--red);
+  color: var(--old-lace);
 }
 
 .secondaryAction {
   background-color: transparent;
-  color: #9aa055;
+  color: var(--vinmn-blue);
 }
 
 .primaryAction:hover,     /*sobra do botão*/
 .secondaryAction:hover {
   transform: translateY(-3px);
-  box-shadow: 0 7px 0 #A35481;
+}
+
+.primaryAction:hover {
+  box-shadow: 0 7px 0 var(--vinmn-blue);
+}
+
+.secondaryAction:hover {
+  background-color: var(--vinmn-blue);
+  color: var(--old-lace);
+  box-shadow: 0 7px 0 var(--red);
 }
 
 @media (max-width: 520px) {
@@ -90,11 +102,13 @@
 .contentPage h1 {
   margin: 12px 0;
   font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
 }
 
 .contentPage > p {
   max-width: 640px;
-  color: #9aa055;
+  color: color-mix(in srgb, var(--vinmn-blue) 72%, var(--old-lace));
   line-height: 1.7;
 }
 
@@ -102,7 +116,7 @@
 .gameSection {
   margin-top: 48px;
   padding-top: 32px;
-  border-top: 2px solid #9aa055;
+  border-top: 2px solid color-mix(in srgb, var(--vinmn-blue) 22%, transparent);
 }
 
 .detailSection {
@@ -113,8 +127,9 @@
 
 .detailSection h2 {
   margin-bottom: 10px;
-  color: #a35481;
+  color: var(--vinmn-blue);
   font-size: 1.35rem;
+  font-weight: 700;
 }
 
 .detailSection p {
@@ -123,36 +138,35 @@
 }
 
 .academicImage {
-  border: 3px solid #a35481;
+  border: 3px solid var(--vinmn-blue);
   border-radius: 8px;
   flex-shrink: 0;
   object-fit: cover;
-   margin-right: 16px;
-  
+  margin-right: 16px;
 }
-.projectImage{
+
+.projectImage {
   width: 100%;
   height: auto;
   max-height: 400px;
   object-fit: cover;
   margin-bottom: 16px;
-  border: 5px solid #a35481;
+  border: 5px solid var(--vinmn-blue);
   border-radius: 8px;
 }
 
 .switlyImage {
   width: 200px;
   height: auto;
-  border: 2px solid #a35481;
+  border: 2px solid var(--vinmn-blue);
   border-radius: 8px;
-  
 }
- 
+
 .word {
   margin-bottom: 16px;
-  color:#9aa055;
+  color: var(--vinmn-blue);
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 900;
   letter-spacing: 0.18em;
 }
 
@@ -165,13 +179,13 @@
 
 .keyboard button,
 .restartAction {
-  border: 2px solid #9aa055;
+  border: 2px solid var(--vinmn-blue);
   border-radius: 6px;
   background: transparent;
-  color: #9aa055;
+  color: var(--vinmn-blue);
   cursor: pointer;
   font: inherit;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .keyboard button {
@@ -181,8 +195,9 @@
 
 .keyboard button:not(:disabled):hover,
 .restartAction:hover {
-  background: #9aa055;
-  color: #f0ecc9;
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--old-lace);
 }
 
 .keyboard button:disabled {
@@ -195,21 +210,15 @@
   padding: 12px 18px;
 }
 
-.projectCard {
-  border: 2px solid #A35481; 
-  border-radius: 12px;
-  padding: 24px;
-  margin-bottom: 32px;
-  background-color: #F1FFD5;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-
+.projectCard,
 .homepageCard {
-  border: 2px solid #A35481; 
+  border: 2px solid var(--vinmn-blue);
   border-radius: 12px;
   padding: 24px;
   margin-bottom: 32px;
-  background-color: #F1FFD5;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: color-mix(in srgb, var(--old-lace) 90%, #ffffff);
+  box-shadow: 0 8px 20px rgba(46, 76, 140, 0.15);
+}
 
 @media (max-width: 600px) {
   .detailSection {

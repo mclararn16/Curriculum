@@ -3,13 +3,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #a35481;
-  color: #d6e6b7;
+  background-color: var(--vinmn-blue);
+  color: var(--old-lace);
+  border-bottom: 3px solid var(--red);
 }
 
 .logo {
-  font-weight: bold;
+  font-weight: 900;
   font-size: 1.2rem;
+  letter-spacing: 0.04em;
 }
 
 .links {
@@ -18,10 +20,13 @@
 }
 
 .links a {
-  color: #f0ecc9;
+  color: var(--old-lace);
+  font-weight: 500;
   text-decoration: none;
+  transition: color 160ms ease;
 }
 
 .links a:hover {
+  color: var(--red);
   text-decoration: underline;
 }

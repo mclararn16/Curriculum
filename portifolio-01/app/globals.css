@@ -1,17 +1,15 @@
 :root {
-  --background:  #d6e6b7;
-  --foreground:  #a35481;
-}
+  --vinmn-blue: #2e4c8c;
+  --old-lace: #fff3e1;
+  --red: #fa2d1a;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #d6e6b7;
-    --foreground: #a35481;
-  }
+  --background: var(--old-lace);
+  --foreground: var(--vinmn-blue);
 }
 
 html {
   height: 100%;
+  color-scheme: light;
 }
 
 html,
@@ -26,13 +24,13 @@ body {
   flex-direction: column;
   color: var(--foreground);
   background: var(--background);
-  font-family: "Lucida Console", "Courier New", monospace;
+  font-family: var(--font-satoshi), "Segoe UI", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3 {
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: var(--font-satoshi), "Segoe UI", system-ui, sans-serif;
 }
 
 * {
@@ -46,8 +44,7 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+::selection {
+  background-color: var(--red);
+  color: var(--old-lace);
 }
