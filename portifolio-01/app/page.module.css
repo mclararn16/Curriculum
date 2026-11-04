@@ -220,6 +220,24 @@
   box-shadow: 0 8px 20px rgba(46, 76, 140, 0.15);
 }
 
+.technologyList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 4px 0 20px;
+}
+
+.technologyBadge {
+  padding: 6px 12px;
+  border: 2px solid var(--red);
+  border-radius: 999px;
+  background-color: var(--red);
+  color: var(--old-lace);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 @media (max-width: 600px) {
   .detailSection {
     display: block;
