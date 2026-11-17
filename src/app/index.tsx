@@ -1,98 +1,137 @@
-import * as Device from 'expo-device';
-import { Platform, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Link, type Href } from "expo-router";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { colors, fonts } from "../../assets/theme";
 
-import { AnimatedIcon } from '@/components/animated-icon';
-import { HintRow } from '@/components/hint-row';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { WebBadge } from '@/components/web-badge';
-import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
+type BotaoProps = {
+  href: string;
+  label: string;
+  primary?: boolean;
+};
 
-function getDevMenuHint() {
-  if (Platform.OS === 'web') {
-    return <ThemedText type="small">use browser devtools</ThemedText>;
-  }
-  if (Device.isDevice) {
-    return (
-      <ThemedText type="small">
-        shake device or press <ThemedText type="code">m</ThemedText> in terminal
-      </ThemedText>
-    );
-  }
-  const shortcut = Platform.OS === 'android' ? 'cmd+m (or ctrl+m)' : 'cmd+d';
+function Botao({ href, label, primary = false }: BotaoProps) {
   return (
-    <ThemedText type="small">
-      press <ThemedText type="code">{shortcut}</ThemedText>
-    </ThemedText>
+    <Link href={href as Href} asChild>
+      <Pressable
+        style={({ pressed }) => [
+          styles.botao,
+          primary ? styles.botaoPrimario : styles.botaoSecundario,
+          pressed &&
+            (primary ? styles.primarioPressionado : styles.secundarioPressionado),
+        ]}
+      >
+        {({ pressed }) => (
+          <Text
+            style={[
+              styles.botaoTexto,
+              { color: primary || pressed ? colors.lace : colors.blue },
+            ]}
+          >
+            {label}
+          </Text>
+        )}
+      </Pressable>
+    </Link>
   );
 }
 
-export default function HomeScreen() {
+export default function Home() {
   return (
-    <ThemedView style={styles.container}>
-      <SafeAreaView style={styles.safeArea}>
-        <ThemedView style={styles.heroSection}>
-          <AnimatedIcon />
-          <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
-          </ThemedText>
-        </ThemedView>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.card}>
+        <Text style={styles.eyebrow}>Portfólio pessoal</Text>
 
-        <ThemedText type="code" style={styles.code}>
-          get started
-        </ThemedText>
+        <Text style={styles.titulo}>Maria Clara Ribeiro</Text>
 
-        <ThemedView type="backgroundElement" style={styles.stepContainer}>
-          <HintRow
-            title="Try editing"
-            hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
-          />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
-          <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
-          />
-        </ThemedView>
+        <Text style={styles.descricao}>
+          Estudante de Ciência da Computação, curiosa por tecnologia e criação.
+        </Text>
 
-        {Platform.OS === 'web' && <WebBadge />}
-      </SafeAreaView>
-    </ThemedView>
+        <View style={styles.acoes}>
+          <Botao href="/sobre" label="Me conheça melhor"  />
+          <Botao href="/projetos" label="Meus projetos" />
+          <Botao href="/forca" label="Divirta-se" />
+        </View>
+      </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    flexDirection: 'row',
+    flexGrow: 1,
+    justifyContent: "center",
+    padding: 24,
   },
-  safeArea: {
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    alignItems: 'center',
-    gap: Spacing.three,
-    paddingBottom: BottomTabInset + Spacing.three,
-    maxWidth: MaxContentWidth,
+  card: {
+    alignItems: "center",
+    padding: 24,
+    borderWidth: 2,
+    borderColor: colors.blue,
+    borderRadius: 12,
+    backgroundColor: colors.card,
+    // sombra no iOS
+    shadowColor: colors.blue,
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    // sombra no Android
+    elevation: 6,
   },
-  heroSection: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    paddingHorizontal: Spacing.four,
-    gap: Spacing.four,
+  eyebrow: {
+    color: colors.red,
+    fontFamily: fonts.bold,
+    fontSize: 13,
+    letterSpacing: 1.8,
+    textTransform: "uppercase",
   },
-  title: {
-    textAlign: 'center',
+  titulo: {
+    marginTop: 14,
+    marginBottom: 12,
+    color: colors.blue,
+    fontFamily: fonts.black,
+    fontSize: 40,
+    lineHeight: 42,
+    letterSpacing: -0.8,
+    textAlign: "center",
   },
-  code: {
-    textTransform: 'uppercase',
+  descricao: {
+    color: colors.textSoft,
+    fontFamily: fonts.regular,
+    fontSize: 17,
+    lineHeight: 29,
+    textAlign: "center",
   },
-  stepContainer: {
-    gap: Spacing.three,
-    alignSelf: 'stretch',
-    paddingHorizontal: Spacing.three,
-    paddingVertical: Spacing.four,
-    borderRadius: Spacing.four,
+  acoes: {
+    width: "100%",
+    gap: 12,
+    marginTop: 36,
+  },
+  botao: {
+    alignItems: "center",
+    paddingVertical: 15,
+    paddingHorizontal: 22,
+    borderWidth: 2,
+    borderRadius: 999,
+    borderColor: colors.blue,
+  },
+  botaoPrimario: {
+    borderColor: colors.red,
+    backgroundColor: colors.red,
+  },
+  botaoSecundario: {
+    borderColor: colors.blue,
+    backgroundColor: "transparent",
+  },
+  primarioPressionado: {
+    opacity: 0.85,
+    transform: [{ translateY: -3 }],
+  },
+  secundarioPressionado: {
+    backgroundColor: colors.blue,
+    transform: [{ translateY: -3 }],
+  },
+  botaoTexto: {
+    fontFamily: fonts.bold,
+    fontSize: 16,
   },
 });
